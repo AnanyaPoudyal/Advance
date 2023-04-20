@@ -1,0 +1,53 @@
+#nav {
+
+    background: #E8DAEF;
+    padding: 1rem 2rem;
+
+
+}
+
+#nav .nav-container {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-container {
+	background: #fff;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    border: 1px solid #333;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-container button {
+    outline: 0;
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+.search-container input {
+    padding: .3rem;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.nav-login {
+    font-size: 1.3rem;
+}
+
+.nav-login i {
+    margin-right: .5rem;
+}
+*, *::after, *::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
