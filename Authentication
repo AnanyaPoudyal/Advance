@@ -33,13 +33,13 @@ private ServletContext context;
 	HttpSession session = req.getSession(false);
 	boolean loggedIn = session != null && session.getAttribute("user") !=null;
 	
-	if(!loggedIn && !(isLoginJSP || isLoginServlet)) {
-		res.sendRedirect((req.getContextPath()+"/login.jsp"));
+	if(!loggedIn && !(isLoginJSP || isLoginServlet)  && !uri.contains("css")){
+		res.sendRedirect(req.getContextPath()+"/login.jsp");
 	}else if(loggedIn && !(!isLoginJSP || isLogoutServlet)) {
-		res.sendRedirect(req.getContextPath()+"/pages/home.jsp");
+		res.sendRedirect(req.getContextPath()+"/home.jsp");
 	}else {
 		//pass the request along the filter chain
-		chain.doFilter(req, res);
+		chain.doFilter(request, response);
 	}
 	}
 	
