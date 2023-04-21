@@ -1,0 +1,1385 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="We provide Electronic gadgets">
+    <meta name="Rojina" content="Rose Gadgets">
+    <meta name="Language" content="English">
+    <meta name="Copyright" content="Rose Gadgets">
+    <meta name="Distribution" content="Global">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- The Internal CSS is given here in style tag -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+        }
+
+        /* NAVIGATION BAR */
+
+        .navigation_bar {
+            border: 1px solid rgba(88, 88, 88, 0.15);
+            background-color: #5f84d4;
+            height: 80px;
+            display: flex;
+            width: 100%;
+        }
+
+        .logo {
+            color: white;
+            margin: auto;
+            font-size: 30px;
+            margin-left: 3%;
+            width: 20%;
+        }
+
+        table {
+            margin: auto;
+            width: 80%;
+        }
+
+        table td a {
+            font-size: 20px;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+
+        }
+
+        table tr {
+            list-style-type: none;
+            float: right;
+            padding-right: 50px;
+
+        }
+
+        table td {
+            float: right;
+            padding: 15px;
+        }
+
+
+        table td:hover {
+            display: inline;
+            font-size: 20px;
+            text-decoration: none;
+            background-color: white;
+            border-radius: .3rem;
+
+        }
+
+
+
+        table td a:hover {
+            color: black;
+
+        }
+
+
+        /* QUICK NAVIGATION LINK */
+        .block {
+            display: flex;
+            width: 100%;
+            height: 420px;
+            background-color: rgb(247, 245, 245);
+            display: flex;
+            padding-top: 10px;
+
+        }
+
+        .intro {
+            width: 75%;
+            text-align: center;
+            margin: 15px;
+            padding-top: 40px;
+        }
+
+        .quick-navigation {
+            margin-top: 45px;
+            margin-right: 15px;
+            height: 320px;
+            width: 25%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-shadow: 1px 1px 5px 5px rgb(230, 228, 228);
+        }
+
+
+        .quick-navigation h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+            text-align: center;
+            margin-left: 23px;
+        }
+
+        .quick-navigation p {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 20px 10px 20px 10px;
+        }
+
+        .tv-link a {
+            margin-left: 10px;
+            padding-left: 65px;
+            padding-right: 62px;
+
+        }
+
+        .phone-link a,
+        .camera-link a {
+            margin-left: 10px;
+            padding-left: 45px;
+            padding-right: 45px;
+        }
+
+        .watch-link a {
+            margin-left: 10px;
+            padding-left: 50px;
+            padding-right: 50px;
+
+        }
+
+        .pc-link a {
+            margin-left: 10px;
+            padding-left: 35px;
+            padding-right: 35px;
+
+        }
+
+        .quick-navigation a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 1px;
+            font-size: 14px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 1px solid #5f84d4;
+            background-color: #5f84d4;
+            border-radius: 20px 10px 20px 10px;
+        }
+
+        .pc-link a:hover,
+        .watch-link a:hover,
+        .phone-link a:hover,
+        .camera-link a:hover,
+        .tv-link a:hover {
+            background-color: white;
+        }
+
+        .quick-navigation p a:hover {
+            color: #4070F4;
+
+        }
+
+        .intro h1 {
+            font-size: 50px;
+
+        }
+
+        .rose {
+            color: #4070F4;
+        }
+
+
+
+        .search-container {
+            display: flex;
+            margin: auto;
+            width: 50%;
+            background-color: #5f84d4;
+            border: 1px solid #5f84d4;
+            border-radius: 50px;
+        }
+
+        .search-container i {
+            color: white;
+            font-size: 25px;
+            margin: auto;
+            padding-right: 5px;
+
+        }
+
+        input[type=text] {
+            padding: 14px;
+            font-size: 17px;
+            width: 82%;
+            border: none;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+
+
+
+        .brand {
+            display: flex;
+            background-color: #4070F4;
+            width: 100%;
+            border: 1px solid #4070F4;
+            height: 100px;
+        }
+
+        .sony {
+            background-color: white;
+            width: 25%;
+            height: 100px;
+
+        }
+
+        .samsung,
+        .dell,
+        .hp,
+        .apple,
+        .lg,
+        .cannon,
+        .nikon {
+            background-color: white;
+            border-right: 1px solid #4070F4;
+            width: 25%;
+            height: 100px;
+        }
+
+        .samsung img {
+            width: 100%;
+            margin-top: 25px;
+
+        }
+
+        .dell img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+
+        }
+
+        .hp img,
+        .apple img,
+        .lg img,
+        .cannon img,
+        .nikon img,
+        .sony img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+
+        }
+
+
+        .large-block {
+            display: flex;
+            width: 100%;
+        }
+
+        .block-one,
+        .block-three {
+            width: 5%;
+            display: flex;
+        }
+
+        .block-two {
+            width: 90%;
+
+
+        }
+
+        .title-smart-watch {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            background-color: #5f84d4;
+           
+        }
+
+        .smart-watch-container {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        .watch-boxes {
+            border: 1px solid rgb(230, 228, 228);
+            width: 25%;
+            margin: 10px;
+        }
+
+
+        .watch-boxes img {
+            width: 100%;
+            height: 200px;
+            margin: auto;
+        }
+
+        .watch-boxes h1 {
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin: auto;
+        }
+
+        .watch-boxes p {
+            text-align: center;
+            margin: auto;
+            color: #fa5f1c;
+            font-size: 20px;
+
+        }
+
+        .stars {
+            font-size: 12px;
+            padding: 1px;
+            text-align: center;
+        }
+
+        .checked {
+            color: #E6CD2D;
+        }
+
+        .underline {
+            width: 15%;
+            margin: auto;
+            height: 4px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #4070F4;
+            border-radius: .5rem;
+        }
+
+        .block-one,
+        .block-three {
+            box-shadow: 1px 1px 5px 5px rgba(167, 161, 161, 0.15);
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .block-one p i,
+        .block-three p i {
+            display: block;
+            width: 7px;
+            height: 7px;
+        }
+
+        .arrow {
+            border: solid #4070F4;
+            border-width: 0 3px 3px 0;
+            padding: 3px;
+
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 16px;
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            margin-left: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            height: 49px;
+            width: 49px;
+            font-size: 49px;
+            color: #5f84d4;
+        }
+
+        #myBtn:hover {
+            opacity: 0.8;
+
+        }
+        
+        .policy {
+
+            padding: 12px;
+            background-color: #8DD0F7;
+            width: auto;
+            color: #0D2441;
+            height: 218px;
+            display: flex;
+        }
+
+        .team {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+        .help {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+        .policy-center {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+
+        .company {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+        .company li,
+        .policy-center li,
+        .help li,
+        .team li {
+            list-style-type: none;
+            margin-left: 25%;
+            padding-top: 15px;
+        }
+
+
+        .help p,
+        .policy p,
+        .team p,
+        .company p {
+            margin-left: 30%;
+            font-weight: bold;
+        }
+
+
+
+
+
+        /*FOOTER*/
+
+        .social-medias .fa {
+            padding: 8px;
+            width: 8%;
+            height: auto;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+
+
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+
+
+        footer {
+            display: flex;
+            width: 100%;
+            color: white;
+        }
+
+        .footer-logo {
+            width: 30%;
+        }
+
+        .footer-logo p {
+            color: #0D2441;
+            font-size: 20px;
+            margin: auto;
+            padding: 10px;
+            padding-left: 100px;
+        }
+
+        .footer {
+            width: 50%;
+        }
+
+        .footer p {
+            margin-left: 9%;
+            color: rgb(112, 112, 112);
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        .social-medias {
+            padding-top: 5px;
+
+            /* float: right; */
+            padding-left: 10%;
+            width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navigation_bar">
+            <div class="logo">
+                Rose Gadgets
+            </div>
+            <!-- This is a table tag used in navigation section  -->
+            <table>
+                <tr>
+                    <td><a href="Contact.html">Contact</a></td>
+                    <td><a href="Research.html">Research</a></td>
+                    <td><a href="Blog.html">Blog</a></td>
+                    <td><a href="Products.html">Products</a></td>
+                    <td><a href="../index/Rose-Gadgets.html">Home</a></td>
+
+                </tr>
+            </table>
+        </div>
+    </header>
+    <main>
+        <div class="block">
+            <div class="intro">
+                <h1>Find the latest
+                    gadgets with,
+                    <br> <span class="rose">ROSE GADGETS</span>
+                </h1>
+                <div class="search-container">
+                    <input type="text" placeholder="Search for products and more..." name="search">
+                    <i class="fa fa-search"></i>
+                </div>
+
+
+            </div>
+
+            <!-- This is the quick navigation section -->
+            <div class="quick-navigation">
+                <h1>Quick Navigation </h1>
+                <ul>
+                    <!-- The #1, #2, #3 and other href link is given to link components in the same single webpage by using ID -->
+                    <p class="watch-link"><a href="#1">Smart Watch</a></p>
+                    <p class="phone-link"><a href="#2">Smart Phones</a></p>
+                    <p class="pc-link" id="change-color-js" onmouseover="stext" onmouseout="htext"><a href="#3">Computer
+                            Items</a></p>
+                    <p class="camera-link"><a href="#4">Camera Items</a></p>
+                    <p class="tv-link"><a href="#5">Smart TV</a></p>
+                </ul>
+            </div>
+        </div>
+
+        <div class="brand">
+            <div class="samsung">
+                <img src="../images/samsung2.png">
+            </div>
+            <div class="lg">
+                <img src="../images/lg.png">
+            </div>
+            <div class="hp">
+                <img src="../images/hp.png">
+            </div>
+            <div class="apple">
+                <img src="../images/apple.png">
+            </div>
+            <div class="dell">
+                <img src="../images/dell2.png">
+            </div>
+            <div class="cannon">
+                <img src="../images/canon.jpg">
+            </div>
+            <div class="nikon">
+                <img src="../images/nikon.jpg">
+            </div>
+            <div class="sony">
+                <img src="../images/sony.png">
+            </div>
+        </div>
+
+        <!-- Smart Watch -->
+
+        <!-- The ID is given in the title to link this title in the quick navigation section-->
+        <div class="title-smart-watch" id="1">
+            Smart Watches
+            <!-- <div class="underline"></div> -->
+
+        </div>
+
+        <!-- A large container named "block" is created and inside it small box are arranged with display: flex property -->
+
+        <div class="large-block">
+
+            <!-- Nested div tags are used to arrange the position each components individually -->
+
+            <div class="block-one">
+
+                <p><i class="arrow left"></i></p>
+
+            </div>
+            <div class="block-two">
+
+
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/watch1.jpg">
+                        <h1>Mi Smart Band </h1>
+                        <p>Rs. 9,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/watch2.jpg">
+                        <h1>DIZO Smart Watch</h1>
+                        <p>Rs. 17,999</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/watch3.jpg">
+                        <h1>Vills Laurrens Watch</h1>
+                        <p>Rs. 5,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/watch4.jpg">
+                        <h1>Zeblaze GTS 2 Smart </h1>
+                        <p>Rs. 20,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/watch5.jpg">
+                        <h1>Zeblaze GTR 2 Smart Watch</h1>
+                        <p>Rs. 7,999</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/watch6.jpg">
+                        <h1>Titan Analog
+                            Watch</h1>
+                        <p>Rs. 4,500</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/watch7.jpg">
+                        <h1>Magnetive Round Watch</h1>
+                        <p>Rs. 6,500</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/watch8.jpg">
+                        <h1>MINGRUI Digital Watch</h1>
+                        <p>Rs. 2,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="block-three">
+                <p><i class="arrow right"></i></p>
+
+            </div>
+        </div>
+
+        <!-- MOBILE -->
+
+        <div class="title-smart-watch" id="2">
+            Smart Phones
+        </div>
+
+        <div class="large-block">
+            <div class="block-one">
+
+                <p><i class="arrow left"></i></p>
+
+            </div>
+            <div class="block-two">
+
+
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/mobile1.jpg">
+                        <h1>Infinix Smart 5 </h1>
+                        <p>Rs. 14,490</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mobile2.png">
+                        <h1>Figi Note 1</h1>
+                        <p>Rs. 12,800</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mobile3.jpg">
+                        <h1>Motorola Moto E4</h1>
+                        <p>Rs. 15,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mobile4.jpg">
+                        <h1>Samsung Fold Mini</h1>
+                        <p>Rs. 45,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/mobile5.jpg">
+                        <h1>Redmi Note 9</h1>
+                        <p>Rs. 30,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mobile6.png">
+                        <h1>Apple Iphone 11</h1>
+                        <p>Rs. 98,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mobile7.jpg">
+                        <h1>One Plus 8T</h1>
+                        <p>Rs. 78,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mobile8.jpg">
+                        <h1>Xiaomi Poco C13</h1>
+                        <p>Rs. 29,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="block-three">
+                <p><i class="arrow right"></i></p>
+
+            </div>
+        </div>
+
+
+        <!-- COMPUTER ACCESSORIES -->
+
+        <div class="title-smart-watch" id="3">
+            Computer Items
+        </div>
+
+        <div class="large-block">
+            <div class="block-one">
+
+                <p><i class="arrow left"></i></p>
+
+            </div>
+            <div class="block-two">
+
+
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/pc1.png">
+                        <h1>Lenovo C13 Ryzen5</h1>
+                        <p>Rs. 71,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/pc2.jpg">
+                        <h1>Apple MacBook Air</h1>
+                        <p>Rs. 115,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/pc3.jpg">
+                        <h1>Laptop Dell Insipiron 3501</h1>
+                        <p>Rs. 60,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/pc4.jpg">
+                        <h1>Lenovo iP3 i5 </h1>
+                        <p>Rs. 79,990</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/keyboard1.jpg">
+                        <h1>Eweadn GT5</h1>
+                        <p>Rs. 1,100</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/mouse1.jpg">
+                        <h1>Aitnt Gaming Mouse
+                        </h1>
+                        <p>Rs. 400</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/pc5.jpg">
+                        <h1>MacBook Pro 14"8C</h1>
+                        <p>Rs. 320,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/pc6.jpg">
+                        <h1>Acer Nitro 5</h1>
+                        <p>Rs. 148,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="block-three">
+                <p><i class="arrow right"></i></p>
+
+            </div>
+        </div>
+        <!-- CAMERA -->
+
+        <div class="title-smart-watch" id="4">
+            Camera Items
+
+        </div>
+
+        <div class="large-block">
+            <div class="block-one">
+
+                <p><i class="arrow left"></i></p>
+
+            </div>
+            <div class="block-two">
+
+
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/camera1.jpg">
+                        <h1>Imilab Home Camera A1</h1>
+                        <p>Rs. 6,400</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/camera2.jpg">
+                        <h1>Wireless IP Camera</h1>
+                        <p>Rs. 3,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/camera8.jpg">
+                        <h1>Hikvision Turbo Camera</h1>
+                        <p>Rs. 2,130</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/camera4.jpg">
+                        <h1>360 Wifi Camera</h1>
+                        <p>Rs. 4,800</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/camera5.jpg">
+                        <h1>Weifung Wf-100 Camera</h1>
+                        <p>Rs. 2,400</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/camera6.jpg">
+                        <h1>Canon EOS 18-55 Camera</h1>
+                        <p>Rs. 29,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/camera7.jpg">
+                        <h1>Canon Ef-S4 Lens</h1>
+                        <p>Rs. 35,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/camera3.jpg">
+                        <h1>4K Action Camera</h1>
+                        <p>Rs. 3,200</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="block-three">
+                <p><i class="arrow right"></i></p>
+
+            </div>
+        </div>
+
+
+        <div class="title-smart-watch" id="5">
+            Smart TV
+        </div>
+
+        <div class="large-block">
+            <div class="block-one">
+
+                <p><i class="arrow left"></i></p>
+
+            </div>
+            <div class="block-two">
+
+
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/tv.jpg">
+                        <h1>Samsung 32" HD TV</h1>
+                        <p>Rs. 50,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/tv2.jpg">
+                        <h1>Intex 40" TV</h1>
+                        <p>Rs. 68,999</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/tv3.jpg">
+                        <h1>Himstar LED TV</h1>
+                        <p>Rs. 30,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/tv4.png">
+                        <h1>Sensei 65" 4K HD</h1>
+                        <p>Rs. 91,590</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="smart-watch-container">
+                    <div class="watch-boxes">
+                        <img src="../images/tv5.jpg">
+                        <h1>Mi TV 4K LED</h1>
+                        <p>Rs. 54,999</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/tv6.jpg">
+                        <h1>Mi TV 4A HD</h1>
+                        <p>Rs. 29,000</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/tv7.jpg">
+                        <h1>Webor Royal HD TV</h1>
+                        <p>Rs. 45,590</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="watch-boxes">
+                        <img src="../images/tv8.jpg">
+                        <h1>Austin 40" 4K</h1>
+                        <p>Rs. 38,500</p>
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="block-three">
+                <p><i class="arrow right"></i></p>
+
+            </div>
+        </div>
+    </main>
+
+
+
+    <div class="policy">
+        <div class="team">
+            <p> TEAM SUPPORT <p>
+                    <ul>
+                        <li>Team</li>
+                        <li>Status</li>
+                        <li>Skills</li>
+                    </ul>
+        </div>
+
+        <div class="help">
+            <p> HELP CENTER <p>
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>Findings</li>
+                        <li>Guidelines</li>
+                    </ul>
+        </div>
+        <div class="policy-center">
+            <p> POLICY CENTER <p>
+                    <ul>
+                        <li>Terms</li>
+                        <li>Privacy</li>
+                        <li>Cookies </li>
+                        <li>License </li>
+                        <li>Moderation </li>
+
+                    </ul>
+        </div>
+        <div class="company">
+            <p> ABOUT COMPANY <p>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Jobs</li>
+                        <li>Blogs</li>
+                        <li>Careers</li>
+                    </ul>
+        </div>
+
+    </div>
+
+    </main>
+    <footer>
+        <div class="footer-logo">
+            <p>Rose Gadgets</p>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy;2022 Rose Gadgets </p>
+        </div>
+        <div class="social-medias">
+            <a href="https://www.facebook.com/profile.php?id=100004974649101" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+        </div>
+
+    </footer>
+    <!-- callng topFunction() in the button onclick listener   -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-circle-up"></i></button>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
