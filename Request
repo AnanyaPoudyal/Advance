@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.tomcat.util.http.parser.Cookie;
 
-public class RequestLogginFilter {
+public class RequestLoginFilter {
 @Override
  public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 		 throws IOException, ServletException {
