@@ -1,0 +1,119 @@
+package controller.servlets.login;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class MyFirstServlet
+ */
+@WebServlet("/Register")
+public class Register extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Register() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html><body><h1>Hello World!</h1></body></html>");
+		PrintWriter printOut = response.getWriter();
+		String user_id = request.getParameter("userId");
+		String first_name = request.getParameter("firstName");
+		String last_name = request.getParameter("lastName");
+		String username = request.getParameter("userName");
+		String phone = request.getParameter("phone");
+		String address = request.getParameter("address");
+		String picture = request.getParameter("picture");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		printOut.println("<!DOCTYPE html>");
+		printOut.println("<HTML>");
+		printOut.println("<HEAD>");
+		printOut.println("<meta charset=\"UTF-8\">");
+		printOut.println("<title>Insert title here</title>");
+		printOut.println("</head>");
+		printOut.println("<body>");
+		printOut.println("<h1>Your account is registered as</h1>");
+		printOut.println("<h1>userId: " + user_id + "</h1>");
+		printOut.println("<h1>First Name: " + first_name + "</h1>");
+		printOut.println("<h1>Last Name: " + last_name + "</h1>");
+		printOut.println("<h1>username: " + username + "</h1>");
+		printOut.println("<h1>phone: " + phone + "</h1>");
+		printOut.println("<h1>address: " + address + "</h1>");
+		printOut.println("<h1>picture: " + picture + "</h1>");
+		printOut.println("<h1>email: " + email + "</h1>");
+		printOut.println("<h1>password: " + password + "</h1>");
+		printOut.println("</body>");
+		printOut.println();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		PrintWriter printOut = response.getWriter();
+		String user_id = request.getParameter("userId");
+		String first_name = request.getParameter("firstName");
+		String last_name = request.getParameter("lastName");
+		String username = request.getParameter("userName");
+		String phone = request.getParameter("phone");
+		String address = request.getParameter("address");
+		String picture = request.getParameter("picture");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/laropa";
+			String user = "root";
+			String pass = "";
+			Connection con = DriverManager.getConnection(url, user, pass);
+			String query = "Insert into user(user_id, first_name, last_name, username, phone, address, picture, email, password) value(?,?,?,?,?,?,?,?,?)";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(9, user_id);
+			st.setString(1, first_name);
+			st.setString(2, last_name);
+			st.setString(3, username);
+			st.setString(4, phone);
+			st.setString(5, address);
+			st.setString(6, picture);
+			st.setString(7, email);
+			st.setString(8, password);
+			int result = st.executeUpdate();
+			if(result > 0) {
+				printOut.println("Data Inserted");
+			}else {
+				printOut.println("Data is not Inserted");
+			}
+		}catch(SQLException | ClassNotFoundException ex) {
+				printOut.println(ex.getMessage());
+				ex.printStackTrace();
+		}
+		
+		doGet(request, response);
+	}
+
+}
