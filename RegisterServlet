@@ -1,0 +1,80 @@
+package controller.servlets.login;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+/**
+ * Servlet implementation class RegisterServlet
+ */
+@WebServlet(asyncSupported = true, urlPatterns = { "/RegisterServlet" })
+public class RegisterServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public RegisterServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/jsp");
+		PrintWriter printOut = response.getWriter();
+		String first_name = request.getParameter("First Name");
+		String last_name = request.getParameter("Last Name");
+		String username = request.getParameter("Username");
+		String password = request.getParameter("Password");
+		String address = request.getParameter("Address");
+		String phone = request.getParameter("Phone Number");
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			String url = "jdbc:mysql://localhost:3306/laropa";
+			String user ="root";
+			String pass = "";
+			Connection con = DriverManager.getConnection(url, user, pass);
+			String query = "insert into user(first_name, last_name, username, password, address, phone) value(?,?,?,?,?,?)";
+			PreparedStatement st = con.prepareStatement(query);
+			
+			st.setString(1, first_name);
+			st.setString(2, last_name);
+			st.setString(3, username);
+			st.setString(4, password);
+			st.setString(5, address);
+			st.setString(6, phone);
+			int result = st.executeUpdate();
+			if (result > 0) {
+				printOut.println("User Registered Successfull");
+			}else {
+				printOut.println("Please insert the data");
+			}
+		}catch(SQLException | ClassNotFoundException ex) {
+				printOut.println(ex.getMessage());
+				ex.printStackTrace();
+			}
+			doGet(request, response);
+	}
+}
