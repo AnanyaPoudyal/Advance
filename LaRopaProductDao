@@ -1,0 +1,47 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class LaRopaProductDao {
+	public String laRopaProductinsert(LaropaProduct laropaProduct) {
+		
+		
+		DAO connDAO = new DAO();
+		connDAO.loadDriver(connDAO.dbDriver);
+		Connection laRopaCon = connDAO.getConnection();
+		String resultProduct = "Date Entered Successfully";
+		String productInsertSQL = "insert into product(pname, price, brand, category, stock, size, imageUrl) values(?,?,?,?,?,?,?)";
+		PreparedStatement ps;
+		try {
+			ps = laRopaCon.prepareStatement(productInsertSQL);
+
+			ps.setString(1, laropaProduct.getPname());
+			ps.setInt(2, laropaProduct.getPrice());
+			ps.setString(3, laropaProduct.getBrand());
+			ps.setString(4, laropaProduct.getCategory());
+			ps.setInt(5, laropaProduct.getStock());
+			ps.setString(6, laropaProduct.getSize());
+			ps.setString(7, laropaProduct.getImageUrl());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			resultProduct = "Data not Entered";
+		}
+		
+		return resultProduct;
+	}
+
+	//Start Query
+	//public static final String CHECK_LOGIN_INFO = "SELECT username, password " + "FROM user WHERE username = ? AND password = ?";
+	public static final String GET_ALL_INFO = "Select * FROM product";
+	public static final String GET_ALL_INFO_BY_ID = "SELECT * FROM product " + "WHERE product_id = ?";
+	//End Query
+	
+
+
+	//IMAGE
+	public static final String IMAGE_DIR = "xampp\\tomcat\\webapps\\images\\";
+	public static final String IMAGE_DIR_SAVE_PATH = "/Desktop/eclipse/images/" + IMAGE_DIR;
+
+}
