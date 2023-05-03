@@ -1,0 +1,56 @@
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+/**
+ * Servlet implementation class LaRopaUserServlet
+ */
+@WebServlet("/LaRopaUserServlet")
+public class LaRopaUserServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public LaRopaUserServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		Integer phone = Integer.parseInt(request.getParameter("phone"));
+		String uname = request.getParameter("uname");
+		String password = request.getParameter("password");
+		// Getting the data from form regiter.jsp with thier name handle 
+		
+		LaropaUser laropaUser = new LaropaUser(fname, lname, uname, password, phone);
+		// making an instance (example) from laropaUser class and giving it name laroUser
+		
+		LaRopaUserDao lrConst = new LaRopaUserDao();
+		// making an example of the class LaRopaUserDao
+		String resultUser = lrConst.laRopaUserinsert(laropaUser);
+		// there contains a function name laropuserinsert in laropUserDaor which takes the data of laropUser instance created at line 46
+		response.getWriter().print(resultUser);
+		// here we are prinitng the succed text or the error text (Status)
+	
+	}
+
+}
