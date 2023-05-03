@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8" />
-    <link rel="stylesheet" href="login.css">
-<title> LaRopa </title>
-</head>
-<body>
-<div class="container">
-<div class="title">Login</div>
+<meta charset="UTF-8">
+<title>LaRopa</title>
+    <link rel="stylesheet" href="register.css">
+  </head>
+   <body>
+     <div class="container">
+    <div class="title">Registration</div>
     	<div class="content">
-</div>
-<form action="LoginServlet" method="post" class="form form-login">
-<div class="user-details">
-       
- <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" required>
+			<form action="LaRopaProductServlet" method="post" enctype="multipart/form-data">
+				<div class="user-details">
+          <div class="input-box">
+            <span class="details">Product Name</span>
+            <input type="text" id= "pname" name="pname">
+         </div>
+          <div class="input-box">
+            <span class="details">Price</span>
+            <input type="text" id= "price" name="price">
           </div>
-                    <div class="input-box">
-            <span class="details">Password</span>
-            <input type="password" required>
+          <div class="input-box">
+            <span class="details">Brand</span>
+            <input type="text" id= "brand" name="brand">
           </div>
+          <div class="input-box">
+            <span class="details">Category</span>
+            <input type="text" id= "category" name="category">
           </div>
-          <div class="button">
-          <input type="submit" value="Login">
+          <div class="input-box">
+            <span class="details">Stock</span>
+            <input type="text" id= "stock" name="stock">
+          </div>
+          <div class="input-box">
+            <span class="details">Size</span>
+            <input type="text" id= "size" name="size">
+          </div>
+          <input type="file" name="imageUrl"/>
+        <div class="button">
+          <input type="submit" value="Register">
         </div>
-        <div class="input_link">
-					<a href="${pageContext.request.contextPath}/register.jsp">Create Your New Account</a>
-				</div>
-          
-          
-</form>
+        </div>
+   </form>
 </div>
-</body>
+</div>
