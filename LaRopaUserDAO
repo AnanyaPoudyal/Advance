@@ -1,0 +1,74 @@
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
+
+
+public class LaRopaUserDao {
+	//Start Database Configuration
+//		public String dbDriver = "com.mysql.jdbc.Driver";
+//		public String db_url = "jdbc:mysql://localhost:3306/laropa";
+//		public String dbUname = "root";
+//		public String dbPassword = "";
+		//END Database Configuration
+		
+//		
+//		public void loadDriver(String dbDriver) {
+//			try {
+//				Class.forName(dbDriver);
+//			} catch (ClassNotFoundException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//		public Connection getConnection() {
+//			Connection laRopaCon = null;
+//			try {
+//				laRopaCon = DriverManager.getConnection(db_url, dbUname, dbPassword);
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			return laRopaCon;
+//		}
+		
+		public String laRopaUserinsert(LaropaUser laropaUser) {
+				
+				
+				DAO connDAO = new DAO();
+				connDAO.loadDriver(connDAO.dbDriver);
+				Connection laRopaCon = connDAO.getConnection();
+				String resultUser = "Date Entered Successfully";
+				String userInsertSQL = "insert into user(fname, lname, phone, uname, password) values(?,?,?,?,?)";
+				PreparedStatement ps;
+				try {
+					ps = laRopaCon.prepareStatement(userInsertSQL);
+	
+					ps.setString(1, laropaUser.getFname());
+					ps.setString(2, laropaUser.getLname());
+					ps.setInt(3, laropaUser.getPhone());
+					ps.setString(4, laropaUser.getUname());
+					ps.setString(5, laropaUser.getPassword());
+					ps.executeUpdate();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					resultUser = "Data not Entered";
+				}
+				
+				return resultUser;
+			}
+		
+		//Start Query
+		public static final String CHECK_LOGIN_INFO = "SELECT username, password " + "FROM user WHERE username = ? AND password = ?";
+		public static final String GET_ALL_INFO = "Select * FROM user";
+		public static final String GET_ALL_INFO_BY_ID = "SELECT * FROM user " + "WHERE user_id = ?";
+		//End Query
+		
+		
+	
+		//IMAGE
+		//public static final String IMAGE_DIR = "xampp\\tomcat\\webapps\\images\\";
+		//public static final String IMAGE_DIR_SAVE_PATH = "/Desktop/eclipse/images/" + IMAGE_DIR;
+}
+
+
