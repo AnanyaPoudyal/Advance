@@ -1,0 +1,45 @@
+
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
+/**
+ * Servlet implementation class LaRopaProductServlet
+ */
+@WebServlet("/LaRopaProductServlet")
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+maxFileSize = 1024 * 1024 * 10, // 10MB
+maxRequestSize = 1024 * 1024 * 50)
+public class LaRopaProductServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		String pname = request.getParameter("pname");
+		Integer price = Integer.parseInt(request.getParameter("price"));
+		String brand = request.getParameter("brand");
+		String category = request.getParameter("category");
+		Integer stock = Integer.parseInt(request.getParameter("stock"));
+		String size = request.getParameter("size");
+		Part imageUrl = request.getPart("imageUrl");
+		// Getting the data from form regiter.jsp with thier name handle 
+		
+		LaropaProduct laropaProduct = new LaropaProduct(pname, price, brand, category, stock, size, imageUrl);
+		// making an instance (example) from laropaUser class and giving it name laroUser
+		
+		LaRopaProductDao lrConst = new LaRopaProductDao();
+		// making an example of the class LaRopaUserDao
+		String resultProduct = lrConst.laRopaProductinsert(laropaProduct);
+		// there contains a function name laropuserinsert in laropUserDaor which takes the data of laropUser instance created at line 46
+		response.getWriter().print(resultProduct);
+		// here we are prinitng the succed text or the error text (Status)
+	
+	}
+
+}
