@@ -1,0 +1,32 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DAO {
+	//Start Database Configuration
+			public String dbDriver = "com.mysql.jdbc.Driver";
+			public String db_url = "jdbc:mysql://localhost:3306/laropa";
+			public String dbUname = "root";
+			public String dbPassword = "";
+			//END Database Configuration
+			
+			
+			public void loadDriver(String dbDriver) {
+				try {
+					Class.forName(dbDriver);
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
+			}
+			
+			public Connection getConnection() {
+				Connection laRopaCon = null;
+				try {
+					laRopaCon = DriverManager.getConnection(db_url, dbUname, dbPassword);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return laRopaCon;
+			}
+}
