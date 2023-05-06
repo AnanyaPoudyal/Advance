@@ -35,7 +35,7 @@
 	</sql:query>
 	
 	<div class="product_view">	
-		<button><a href="${pageContext.request.contextPath}/productRehister.jsp">Add product</a></button>
+		<button><a href="${pageContext.request.contextPath}/productRegister.jsp">Add product</a></button>
 		<!-- Creating table to populate table infromation -->
 		<table border="1">
 			<thead>
@@ -44,9 +44,10 @@
 					<th>Product Name</th>
 					<th>Price</th>
 					<th>Brand</th>
-					<th>category</th>
-					<th>stock</th>
-					<th>size</th>
+					<th>Category</th>
+					<th>Stock</th>
+					<th>Size</th>
+					<th>Image</th>
 					<th>Updat/Delete</th>
 				</tr>
 			</thead>
@@ -60,6 +61,7 @@
 				<td><c:out value="${product.category}"/></td>
 				<td><c:out value="${product.stock}"/></td>
 				<td><c:out value="${product.size}"/></td>
+				<td><c:out value="${product.imageUrl}"/></td>
 				<td>
 					<form method="post">
 		                        <input type="hidden" name="updateId" value="${product.pname}" />
