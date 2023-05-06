@@ -1,33 +1,52 @@
-<!-- Database connection using SQL Tag library -->
-	<sql:DataSource var="DAO" driver="com.mysql.jdbc.Driver"
-	url="jdbc:mysql://localhos:3306/laropa" user="root" password=""/>
-<!-- Executing Query Using SQL Tag Library -->
-<sql:query var="product" dataSource="${dbConnection}">
-	SELECT product_id, pname, price, brand, category, stock, size FROM product WHERE pname LIKE '%1';
-</sql:query>
-<!-- Creating table to populate table infromation -->
-<table border="1">
-	<thead>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- Database connection using SQL Tag library -->
+	<sql:setDataSource var="dbConnection" driver="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost:3306/laropa" user="root" password=""/>
+	<!-- Executing Query Using SQL Tag Library -->
+	<sql:query var="allProducts" dataSource="${dbConnection}">
+		SELECT * FROM product;
+	</sql:query>
+	<!-- Creating table to populate table infromation -->
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Product Id</th>
+				<th>Product Name</th>
+				<th>Price</th>
+				<th>Brand</th>
+				<th>category</th>
+				<th>stock</th>
+				<th>size</th>
+				<th>imageUrl</th>
+			</tr>
+		</thead>
+	<!-- Using Core Tab Library to populate infromation fetched from select query -->
+	<c:forEach var="product" items="${allProducts.rows}">
 		<tr>
-			<th>Product Id</th>
-			<th>Product Name</th>
-			<th>Price</th>
-			<th>Brand</th>
-			<th>category</th>
-			<th>stock</th>
-			<th>size</th>
+			<td><c:out value="${product.product_id}"/></td>
+			<td><c:out value="${product.pname}"/></td>
+			<td><c:out value="${product.price}"/></td>
+			<td><c:out value="${product.brand}"/></td>
+			<td><c:out value="${product.category}"/></td>
+			<td><c:out value="${product.stock}"/></td>
+			<td><c:out value="${product.size}"/></td>
+			<td><c:out value="${product.imageUrl}"/></td>
 		</tr>
-	</thead>
-<!-- Using Core Tab Library to populate infromation fetched from select query -->
-<c:froEach var="product" items="${product.row }">
-<tr>
-	<td><c:out value="${product.product_id}"/></td>
-	<td><c:out value="${product.pname}"/></td>
-	<td><c:out value="${product.price}"/></td>
-	<td><c:out value="${product.brand}"/></td>
-	<td><c:out value="${product.category}"/></td>
-	<td><c:out value="${product.stock}"/></td>
-	<td><c:out value="${product.size}"/></td>
-</tr>
-</c:froEach>
-</table>
+	</c:forEach>
+	</table>
+
+</body>
+</html>
