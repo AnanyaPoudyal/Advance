@@ -1,0 +1,162 @@
+body{
+background-color: #ECF9FF;
+}
+	.navbar {
+			background-color: #ECF9FF;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			height: 70px;
+			padding: 0 25px;
+		}
+
+		/* Style the logo */
+		.logo {
+			flex-grow: 1;
+		}
+
+		.logo img {
+			height: 50px;
+			width: 50px;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+
+			.logo span {
+  				font-size: 28px;
+  				font-weight: bold;
+			}
+		/* Style the search container */
+		.search-container {
+			flex-grow: 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.search-container input[type=text] {
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			width: 400px;
+			font-size: 16px;
+		}
+
+		.search-container button {
+			background-color:  #C0DBEA;
+			color: Black;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		.search-container button:hover {
+  			background-color:  #146C94;
+  			color: white;
+		}
+
+		table {
+ 		 margin: 100px;
+ 		 background-color: #C0DBEA;
+
+		}
+
+		table td a {
+  		font-size: 25px;
+  		padding: 10px;
+  		text-decoration: none;
+  		color: #0d2441;
+}
+
+table tr {
+  list-style-type: none;
+  float: right;
+  padding-right: 50px;
+}
+
+table td {
+  float: right;
+  padding: 15px;
+}
+
+table td:hover {
+  display: inline;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  background-color:  #146C94;
+border-radius: 5px;
+}
+
+table td a:hover {
+  color: white;
+}
+		
+		.navibar {
+			background-color: #ECF9FF;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			height: 70px;
+			padding: 0 20px;
+		}
+
+		/* Style the links */
+		.navibar a {
+			color: black;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: bold;
+			flex-grow: 1;
+			border-right: 1px solid black;
+			border-left: 1px solid black;
+		}
+		/* Style the first and last links */
+		.navibar a:first-child {
+			border-left: black;
+		}
+
+		.navibar a:last-child {
+			border-right: black;
+		}
+		.navibar a:hover {
+			background-color:#146C94;
+			color: white;
+		}
+	
+ .brand-container{
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-gap: 10px;
+  justify-items: center;
+  margin: 30px;
+
+
+}
+.brand-image{
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+
+}
+.brand-image img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.brand-image:hover{
+  transform: scale(1.3,1.3);
+  transition: .3s transform;
+}
