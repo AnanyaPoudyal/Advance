@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+ 
+ <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<link rel="stylesheet" href="/view.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="navbar">
+		<div class="logo">
+			<img src="../images/logo.png" alt="Logo">
+			<span>LaRopa</span>
+		</div>
+	</div>
+	<div class="navibar">
+		<h1>Admin Panel</h1>
+	</div>
+ <!-- Database connection using SQL Tag library -->
+	<sql:setDataSource var="dbConnection" driver="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost:3306/laropa" user="root" password=""/>
+	<!-- Executing Query Using SQL Tag Library -->
+	<sql:query var="allProducts" dataSource="${dbConnection}">
+		SELECT * FROM product;
+	</sql:query>
+	
+	<div class="product_view">	
+		<button><a href="${pageContext.request.contextPath}/productRehister.jsp">Add product</a></button>
+		<!-- Creating table to populate table infromation -->
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Product Id</th>
+					<th>Product Name</th>
+					<th>Price</th>
+					<th>Brand</th>
+					<th>category</th>
+					<th>stock</th>
+					<th>size</th>
+					<th>Updat/Delete</th>
+				</tr>
+			</thead>
+		<!-- Using Core Tab Library to populate infromation fetched from select query -->
+		<c:forEach var="product" items="${allProducts.rows}">
+			<tr>
+				<td><c:out value="${product.product_id}"/></td>
+				<td><c:out value="${product.pname}"/></td>
+				<td><c:out value="${product.price}"/></td>
+				<td><c:out value="${product.brand}"/></td>
+				<td><c:out value="${product.category}"/></td>
+				<td><c:out value="${product.stock}"/></td>
+				<td><c:out value="${product.size}"/></td>
+				<td>
+					<form method="post">
+		                        <input type="hidden" name="updateId" value="${product.pname}" />
+		                        <button type="submit">Update</button>
+		            </form>
+		            <form method="post">
+		                        <input type="hidden" name="deleteId" value="${product.pname}" />
+		                        <button type="submit">Delete</button>
+		            </form>
+		           </td>
+      		</tr>
+		</c:forEach>
+		</table>
+			<sql:query var="allOrders" dataSource="${dbConnection}">
+				SELECT * FROM orders;
+			</sql:query>
+			<table border="1">
+					<thead>
+						<tr>
+							<th>Order Id</th>
+							<th>Order Date</th>
+							<th>User Id</th>
+							<th>Product Id</th>
+							<th>Address</th>
+						</tr>
+					</thead>
+				<!-- Using Core Tab Library to populate infromation fetched from select query -->
+				<c:forEach var="orders" items="${allOrders.rows}">
+					<tr>
+						<td><c:out value="${orders.order_id}"/></td>
+						<td><c:out value="${orders.order_date}"/></td>
+						<td><c:out value="${orders.user_id}"/></td>
+						<td><c:out value="${orders.product_id}"/></td>
+						<td><c:out value="${orders.address}"/></td>
+					</tr>
+					
+				</c:forEach>
+				</table>
+			
+</body>
+</html>
