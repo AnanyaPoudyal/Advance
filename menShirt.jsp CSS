@@ -1,0 +1,900 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet/menShirt.css" >
+<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Insert title here</title>
+</head>
+
+<body>
+<div class="navigation_bar">
+			<div class="logo">
+				LaRopa
+			</div>
+			<form class="search-container">
+				<input type="text" placeholder="Search" name="search" />
+				<button type="submit"><i class="fa fa-search"></i></button>
+			</form>
+			<table>
+				<tr>
+					<td><a href="register.jsp">Register</a></td>
+					<td><a href="login.jsp">Login</a></td>
+				</tr>
+			</table>
+
+		</div>
+		<div class="nav">
+			<table>
+				<tr>
+					<td><a href="men.jsp">Men</a></td>
+					<td><a href="Women.jsp">Women</a></td>
+					<td><a href="brand.jsp">Brands</a></td>
+					<td><a href="product.jsp">Products</a></td>
+					<td><a href="index.jsp">Home</a></td>
+
+				</tr>
+			</table>
+       </div>
+	<main>
+
+	
+        <div class="title-products" id="1">
+            Shirts
+          </div>
+        <div class="large-block">
+			<div class="block-two">
+				 <div class="products-container">
+                    <div class="products-boxes">
+                        <img src="./images/1.PNG">
+                        <h1>Pink dress </h1>
+                        <p>Rs. 2,000</p>
+                        <button class = "add-to-cart">Add to cart </button>                     
+ 
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/2.PNG">
+                        <h1>Wide-leg jeans</h1>
+                        <p>Rs. 3,000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/3.PNG">
+                        <h1>white tshirt and beige pants</h1>
+                        <p>Rs. 5,000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/4.PNG">
+                        <h1>Jeans Dress </h1>
+                        <p>Rs. 20,000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="products-container">
+                    <div class="products-boxes">
+                        <img src="./images/5.PNG">
+                        <h1>Blazer</h1>
+                        <p>Rs. 7,999</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/6.PNG">
+                        <h1>Shirt and jeans</h1>
+                        <p>Rs. 4,500</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/7.PNG">
+                        <h1>Sage green bomber jacket</h1>
+                        <p>Rs. 6,500</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/8.PNG">
+                        <h1>Black hoodie</h1>
+                        <p>Rs. 2,000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="large-block">
+            <div class="block-two">
+
+
+                <div class="products-container">
+                    <div class="products-boxes">
+                        <img src="./images/19.PNG">
+                        <h1>Trench coat </h1>
+                        <p>Rs. 1,440</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/11.PNG">
+                        <h1>Slim leg jeans</h1>
+                        <p>Rs. 12,800</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/12.PNG">
+                        <h1>White tshirt and cargo pants</h1>
+                        <p>Rs. 15,00</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/13.PNG">
+                        <h1> Cropped jeans jacket and white pants </h1>
+                        <p>Rs. 75,00</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="products-container">
+                    <div class="products-boxes">
+                        <img src="./images/14.PNG">
+                        <h1>tank top and jeans</h1>
+                        <p>Rs. 8,000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/17.PNG">
+                        <h1>Jeans skirt</h1>
+                        <p>Rs. 4,000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/16.PNG">
+                        <h1>Jeans with blazer</h1>
+                        <p>Rs. 7,800</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/15.PNG">
+                        <h1>white dress</h1>
+                        <p>Rs. 2,900</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+  
+        </div>
+
+
+
+
+
+                <div class="products-container">
+                    <div class="products-boxes">
+                        <img src="./images/pantt.PNG">
+                        <h1>Beige pant</h1>
+                        <p>Rs. 3,100</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/pant22.PNG">
+                        <h1>White pant</h1>
+                        <p>Rs. 3150</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/pant33.PNG">
+                        <h1>Black pant</h1>
+                        <p>Rs. 2000</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/pant44.PNG">
+                        <h1>Acid wash jeans </h1>
+                        <p>Rs. 2990</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="products-container">
+                    <div class="products-boxes">
+                        <img src="./images/pant55.PNG">
+                        <h1>Blue Jeans</h1>
+                        <p>Rs. 2,100</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/pant6.PNG">
+                        <h1>Classic Blue Jeans</h1>
+                        <p>Rs. 2400</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/pant7.PNG">
+                        <h1>Black Jeans</h1>
+                        <p>Rs. 3,200</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="products-boxes">
+                        <img src="./images/pant8.PNG">
+                        <h1>White Jeans</h1>
+                        <p>Rs. 1400</p>
+                        <button class = "add-to-cart">Add to cart </button> 
+
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+    <div class="policy">
+        <div class="team">
+            <p> TEAM SUPPORT <p>
+                    <ul>
+                        <li>Team</li>
+                        <li>Status</li>
+                        <li>Skills</li>
+                    </ul>
+        </div>
+
+        <div class="help">
+            <p> HELP CENTER <p>
+                    <ul>
+                        <li>Contact Us</li>
+                        <li>Findings</li>
+                        <li>Guidelines</li>
+                    </ul>
+        </div>
+        <div class="policy-center">
+            <p> POLICY CENTER <p>
+                    <ul>
+                        <li>Terms</li>
+                        <li>Privacy</li>
+                        <li>Cookies </li>
+                        <li>License </li>
+                        <li>Moderation </li>
+
+                    </ul>
+        </div>
+        <div class="company">
+            <p> ABOUT COMPANY <p>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Jobs</li>
+                        <li>Blogs</li>
+                        <li>Careers</li>
+                    </ul>
+        </div>
+
+    </div>
+
+    </main>
+    <footer>
+        <div class="footer-logo">
+            <p>La Ropa</p>
+        </div>
+        <div class="footer">
+            <p>Copyright &copy;2023 La Ropa </p>
+        </div>
+        <div class="social-medias">
+            <a href="https://www.facebook.com/profile.php?id=100004974649101" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+        </div>
+
+    </footer>
+    <!-- callng topFunction() in the button onclick listener   -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-circle-up"></i></button>
+
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+ 
+
+
+</body>
+
+</html>
+
+CSS
+
+@charset "ISO-8859-1";
+body {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #0d2441;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation_bar {
+  display: flex;
+  width: 100%;
+  height: 80px;
+}
+
+.search-container {
+	background: #fff;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    border: 1px solid #333;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-container button {
+    outline: 0;
+    border: 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+.search-container input {
+    padding: .3rem;
+    border: 0;
+    outline: 0;
+    background: #fff;
+    width: 100%;
+}
+
+
+.logo {
+  margin: auto;
+  font-size: 30px;
+  margin-left: 3%;
+  width: 20%;
+}
+
+table {
+  margin: auto;
+
+}
+
+table td a {
+  font-size: 20px;
+  padding: 15px;
+  text-decoration: none;
+  color: #0d2441;
+}
+
+table tr {
+  list-style-type: none;
+  float: right;
+  padding-right: 50px;
+}
+
+table td {
+  float: right;
+  padding: 15px;
+}
+
+table td:hover {
+  display: inline;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+
+  background-color: #9b59b6;
+  border-radius: 0.3rem;
+}
+
+table td a:hover {
+  color: white;
+}
+
+.title {
+   display: inline-;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    background-color: #5f84d4;
+  }
+.main {
+  width: 100%;
+  display: flex;
+  background-color: red;
+  margin-top: -200px;
+}
+.large-block {
+            display: flex;
+            width: 100%;
+        }
+
+        .block-three {
+            width: 5%;
+            display: flex;
+        }
+
+        .block-two {
+            width: 90%;
+       }
+       
+ .title-products {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+            background-color: #5f84d4;
+
+        }
+
+        .products-container {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+
+        .products-boxes {
+            border: 1px solid rgb(230, 228, 228);
+            width: 25%;
+            margin: 10px;
+            height: auto;
+        }
+
+
+        .products img {
+             width:  100px;
+             height: 100px;
+             object-fit: cover;
+        }
+
+        .products-boxes h1 {
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-align: center;
+            margin: auto;
+        }
+
+        .products-boxes p {
+            text-align: center;
+            margin: auto;
+            color: #fa5f1c;
+            font-size: 20px;
+
+        }
+        
+                 .add-to-cart {
+ 		    background-color: lightblue; 
+ 		    display: flex;
+  			justify-content: center;
+ 		    align-items: center;
+		    text-align: center; 	
+		    margin-top:5%;
+		    margin-left: 50%;	   
+		    border:none; 
+  			top: 50%;
+ 		    left: 50%;
+  			-ms-transform: translate(-50%, -50%);
+  			transform: translate(-50%, -50%);
+        }
+
+        .stars {
+            font-size: 12px;
+            padding: 1px;
+            text-align: center;
+        }
+
+        .checked {
+            color: #E6CD2D;
+        }
+
+        .underline {
+            width: 15%;
+            margin: auto;
+            height: 4px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #4070F4;
+            border-radius: .5rem;
+        }
+        
+        .block-one,
+        .block-three {
+            box-shadow: 1px 1px 5px 5px rgba(167, 161, 161, 0.15);
+            margin: auto;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .block-one p i,
+        .block-three p i {
+            display: block;
+            width: 7px;
+            height: 7px;
+        }
+
+        .arrow {
+            border: solid #4070F4;
+            border-width: 0 3px 3px 0;
+            padding: 3px;
+
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            margin-left: 16px;
+        }
+
+        .left {
+            transform: rotate(135deg);
+            -webkit-transform: rotate(135deg);
+            margin-left: 20px;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 50%;
+            height: 49px;
+            width: 49px;
+            font-size: 49px;
+            color: #5f84d4;
+        }
+
+        #myBtn:hover {
+            opacity: 0.8;
+
+        }
+
+        .policy {
+
+            padding: 12px;
+            background-color: #8DD0F7;
+            width: auto;
+            color: #0D2441;
+            height: 218px;
+            display: flex;
+        }
+
+        .team {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+        .help {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+        .policy-center {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+
+        .company {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            width: 25%;
+            height: auto;
+            font-size: 15px;
+        }
+
+        .company li,
+        .policy-center li,
+        .help li,
+        .team li {
+            list-style-type: none;
+            margin-left: 25%;
+            padding-top: 15px;
+        }
+
+
+        .help p,
+        .policy p,
+        .team p,
+        .company p {
+            margin-left: 30%;
+            font-weight: bold;
+        }
+
+
+
+
+        .social-medias .fa {
+            padding: 8px;
+            width: 8%;
+            height: auto;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+
+
+
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+        .fa-google {
+            background: #dd4b39;
+            color: white;
+        }
+
+
+        footer {
+            display: flex;
+            width: 100%;
+            color: white;
+        }
+
+        .footer-logo {
+            width: 30%;
+        }
+
+        .footer-logo p {
+            color: #0D2441;
+            font-size: 20px;
+            margin: auto;
+            padding: 10px;
+            padding-left: 100px;
+        }
+
+        .footer {
+            width: 50%;
+        }
+
+        .footer p {
+            margin-left: 9%;
+            color: rgb(112, 112, 112);
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+
+        }
+
+        .social-medias {
+            padding-top: 5px;
+
+            /* float: right; */
+            padding-left: 10%;
+            width: 20%;
+        }
