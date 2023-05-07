@@ -1,13 +1,149 @@
-public Connection getConnection(){
-		try {
-			Class.forName(MyConstants.DRIVER_NAME);
-			Connection connection = DriverManager.getConnection(
-					MyConstants.DB_URL,
-					MyConstants.DB_USER_NAME,
-					MyConstants.DB_USER_PASSWORD);
-			return connection;
-		}catch(SQLException | ClassNotFoundException ex) {
-			ex.printStackTrace();
+	public List<User> getAllData(String query) {
+        List<User> dataList = new ArrayList<User>();
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+	            Statement stmt = dbConnection.createStatement();
+	            ResultSet rs = stmt.executeQuery(query);
+	            while (rs.next()) {
+	            	User data = new User();
+	                data.setFname(rs.getString("fname"));
+	                data.setLname(rs.getString("lname"));
+	                data.setUname(rs.getString("uname"));
+	                dataList.add(data);
+	            }
+	            rs.close();
+	            stmt.close();
+	            dbConnection.close();
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+		}
+        return dataList;
+	}
+	
+	public ResultSet selectWhereQuery(String query, String id) {
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+				PreparedStatement statement = dbConnection.prepareStatement(query);
+				statement.setString(1, id);
+				ResultSet result = statement.executeQuery();
+				return result;
+			} catch (SQLException e) {
+				return null;
+			}
+		}else {
 			return null;
 		}
 	}
+
+	public Boolean isUserAlreadyRegistered(String uname) {
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+				PreparedStatement statement = dbConnection.prepareStatement(MyConstants.CHECK_LOGIN_INFO);
+				statement.setString(1, uname);
+				ResultSet result = statement.executeQuery();
+				if(result.next()) {
+					return true;		
+				}else return false;
+			} catch (SQLException e) { return null; }
+		}else { return null; }
+						
+	}
+	
+	public Boolean isUserRegistered(String query, String uname, String password) {
+		Connection dbConnection = getConnection();
+		query = "SELECT uname, password " + "FROM user WHERE uname = ? AND password = ?";
+		if(dbConnection != null) {
+			System.out.println("Connected Succesfulyy");
+			try {
+				PreparedStatement statement = dbConnection.prepareStatement(query);
+				statement.setString(1, uname);
+				statement.setString(2, password);
+				ResultSet result = statement.executeQuery();
+				if(result.next()) {
+//					String user = result.getString("uname");
+//					String passwordDb  = result.getString("password");
+//					String decryptedPwd = PasswordEncryptionWithAes.decrypt(passwordDb, uname);
+//					if(decryptedPwd!=null && user.equals(uname) && decryptedPwd.equals(password)) return true;
+//					else return false;
+					return true;
+				}else return false;
+			} catch (SQLException e) { return null; }
+		}else { return null; }
+	}
+		
+	public int isAdmin(String username) {
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+				PreparedStatement statement = dbConnection.prepareStatement(MyConstants.IS_USER);
+				statement.setString(1, username);
+				ResultSet result = statement.executeQuery();
+				if(result.next()) {
+					String role = result.getString("role");
+					if(role.toLowerCase() == MyConstants.ADMIN) return 1;
+					else return 0;
+				}
+				else return -1;
+			} catch (SQLException e) { return -2; }
+		}else { return -3; }
+	}
+	//	End region Read operation
+
+	//	Start region Create operation
+	public int registerUser(String query, User user) {
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+				if(isUserAlreadyRegistered(user.getUname())) return -1;
+				
+				PreparedStatement statement = dbConnection.prepareStatement(query);
+				statement.setString(1, user.getFname());
+				statement.setString(2, user.getLname());
+				statement.setString(3, user.getUname());
+				statement.setString(4, PasswordEncryptionWithAes.encrypt(
+						user.getUname(), user.getPassword()));
+//				statement.setString(5, userModel.getRole());
+//				statement.setString(6, userModel.getImageUrlFromPart());
+
+				int result = statement.executeUpdate();
+				if(result>=0) return 1;
+				else return 0;
+			} catch (Exception e) { return -2; }
+		}else { return -3; }
+	}
+	//	End region Create operation
+	
+	//	Start region Update operation
+	public Boolean updateUser(String query, String uname) {
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+				PreparedStatement statement = dbConnection.prepareStatement(query);
+				statement.setString(1, uname);
+				int result = statement.executeUpdate();
+				if(result>=0)return true;
+				else return false;
+			} catch (SQLException e) { return null; }
+		}else { return null; }
+	}
+	//	End region Update operation
+	
+	//	Start region Delete operation
+	public Boolean deleteUser(String query, String uname) {
+		Connection dbConnection = getConnection();
+		if(dbConnection != null) {
+			try {
+				PreparedStatement statement = dbConnection.prepareStatement(query);
+				statement.setString(1, uname);
+				int result = statement.executeUpdate();
+				if(result>=0)return true;
+				else return false;
+			} catch (SQLException e) { return null; }
+		}else { return null; }
+	}
+	//	End region Delete operation
+}
