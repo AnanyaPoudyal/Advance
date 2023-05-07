@@ -1,0 +1,19 @@
+<div class="login-button">
+			<form action="
+		    				<%if(!mySession.checkUser(user)){
+		    					out.print(mainPath);%>/login.jsp<%
+		   					} 
+		    				else {
+		    					out.print(mainPath);%>/LogoutServlet<%
+		   					}%>
+		    			"
+		    	method="post">
+		  			<input type="submit" value="
+		    			<%if(mySession.checkUser(user)){%>
+				    		Logout
+				   		<%}else{%>
+				    		Login
+				   		<%}%>
+			   		"/>
+		    	</form>
+		</div>
