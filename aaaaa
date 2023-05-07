@@ -1,19 +1,11 @@
-<div class="login-button">
-			<form action="
-		    				<%if(!mySession.checkUser(user)){
-		    					out.print(mainPath);%>/login.jsp<%
-		   					} 
-		    				else {
-		    					out.print(mainPath);%>/LogoutServlet<%
-		   					}%>
-		    			"
-		    	method="post">
-		  			<input type="submit" value="
-		    			<%if(mySession.checkUser(user)){%>
-				    		Logout
-				   		<%}else{%>
-				    		Login
-				   		<%}%>
-			   		"/>
-		    	</form>
-		</div>
+<% 
+	String errorMessage = (String) request.getAttribute("errorMessage");
+	String registerMessage = (String) request.getHeader("registerMessage");
+	%>
+	<% if (registerMessage != null) { %>
+		    <div class="register-message"><%= registerMessage %></div>
+		<% } %>
+	<div class="container">
+		<% if (errorMessage != null) { %>
+		    <div class="error-message"><%= errorMessage %></div>
+		<% } %>
