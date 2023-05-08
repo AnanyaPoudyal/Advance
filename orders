@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LaRopa</title>
+    <link rel="stylesheet" href="register.css">
+  </head>
+   <body>
+     <div class="container">
+    <div class="title">Orders</div>
+    	<div class="content">
+			<form action="OrderServlet" method="post" >
+			<div class="user-details">
+          <div class="input-box">
+            <span class="details">Order Date</span>
+            <input type="text" id= "order_date" name="order_date">
+         </div>          
+           <div class="input-box">
+            <span class="details">User id</span>
+            <input type="number" id= "user_id" name="user_id">
+          </div> 
+          <div class="input-box">
+            <span class="details">Product id</span>
+            <input type="number" id= "product_id" name="product_id">
+          </div> 
+        <div class="button">
+          <input type="submit" value="Order">
+        </div>
+        <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id= "address" name="address">
+        </div>
+        </div>
+   </form>
+</div>
+</div>
+				
+  </body>
+</html>
