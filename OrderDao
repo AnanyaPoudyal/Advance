@@ -1,0 +1,36 @@
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.servlet.http.HttpServletResponse;
+
+public class OrdersDao {
+public String orderinsert(Orders orders, HttpServletResponse response) {
+		
+		
+		DAO connDAO = new DAO();
+		connDAO.loadDriver(connDAO.dbDriver);
+		Connection laRopaCon = connDAO.getConnection();
+		String resultOrder = "Date Entered Successfully";
+		String orderInsertSQL = "insert into order(order_date, user_id, product_id, address ) values(?,?,?,?)";
+		PreparedStatement ps;
+		try {
+			ps = laRopaCon.prepareStatement(orderInsertSQL);
+
+			ps.setString(1, orders.getOrder_date());
+			ps.setInt(2, orders.getUser_id());
+			ps.setInt(3, orders.getProduct_id());
+			ps.setString(4, orders.getAddress());
+			ps.executeUpdate();
+			response.sendRedirect("product.jsp");
+		} catch (SQLException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			resultOrder = "Data not Entered";
+		}
+		
+		return resultOrder;
+	}
+
+}
