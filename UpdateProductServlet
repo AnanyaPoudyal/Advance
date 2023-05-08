@@ -1,0 +1,40 @@
+import java.io.IOException;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class OrderServlet
+ */
+@WebServlet("/OrderServlet")
+public class OrderServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String pname = request.getParameter("pname");
+		Integer price = Integer.parseInt(request.getParameter("price"));
+		String brand = request.getParameter("brand");
+		String category = request.getParameter("category");
+		Integer stock = Integer.parseInt(request.getParameter("stock"));
+		String size = request.getParameter("size");
+		//Part imageUrl = request.getPart("imageUrl");
+		// Getting the data from form regiter.jsp with thier name handle 
+		
+		Orders orders = new Orders(pname, size, brand, category, stock, price);
+		// making an instance (example) from laropaUser class and giving it name laroUser
+		
+		OrdersDao lrConst = new OrdersDao();
+		// making an example of the class LaRopaUserDao
+		String resultProduct = lrConst.productupdate(orders);
+		// there contains a function name laropuserinsert in laropUserDaor which takes the data of laropUser instance created at line 46
+		response.getWriter().print(resultProduct);
+		// here we are prinitng the succed text or the error text (Status)
+	
+
+	}
+
+}
