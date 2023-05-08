@@ -1,0 +1,46 @@
+public class Orders {
+
+	private String order_date, address;
+	private Integer user_id, product_id;
+	
+	
+	
+	
+	public Orders(String order_date, String address, Integer product_id, Integer user_id) {
+		super();
+		this.order_date = order_date;
+		this.address = address;
+		this.user_id = user_id;
+		this.product_id = product_id;	
+	}
+
+
+
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public Integer getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
+	}
+	public Integer getProduct_id() {
+		return product_id;
+	}
+	public void setProduct_id(Integer product_id) {
+		this.product_id = product_id;
+	}
+	public String getOrder_date() {
+		return order_date;
+	}
+	public void setOrder_date(String order_date) {
+		this.order_date = order_date;
+	}
+	
+	
+
+}
