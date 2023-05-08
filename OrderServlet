@@ -1,0 +1,36 @@
+
+import java.io.IOException;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/OrderServlet")
+public class OrderServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String order_date = request.getParameter("order_date");
+		Integer user_id = Integer.parseInt(request.getParameter("user_id"));
+		Integer product_id = Integer.parseInt(request.getParameter("product_id"));
+		String address = request.getParameter("address");
+	
+		// Getting the data from form regiter.jsp with thier name handle 
+		
+		Orders orders = new Orders(order_date, address, product_id, user_id);
+		// making an instance (example) from laropaUser class and giving it name laroUser
+		
+		OrdersDao lrConst = new OrdersDao();
+		// making an example of the class LaRopaUserDao
+		String resultOrder = lrConst.orderinsert(orders, response);
+		// there contains a function name laropuserinsert in laropUserDaor which takes the data of laropUser instance created at line 46
+		response.getWriter().print(resultOrder);
+		// here we are prinitng the succed text or the error text (Status)
+	
+
+	}
+
+}
