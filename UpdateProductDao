@@ -1,0 +1,47 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class UpdateProductDao {
+public String productupdate(UpdateProducts updateProducts) {
+		
+		
+		DAO connDAO = new DAO();
+		connDAO.loadDriver(connDAO.dbDriver);
+		Connection laRopaCon = connDAO.getConnection();
+		String resultUpdate = "Date Entered Successfully";
+		String productUpdateSQL = "UPDATE product SET pname=?, " + "price=?, brand=?, category=?, stock=?, size=? WHERE product_id=?";
+		PreparedStatement ps;
+		try {
+			ps = laRopaCon.prepareStatement(productUpdateSQL);
+			ps.setString(1, orders.getPname());
+			ps.setInt(2, orders.getPrice());
+			ps.setString(3, orders.getBrand());
+			ps.setString(4, orders.getCategory());
+			ps.setInt(5, orders.getStock());
+			ps.setString(6, orders.getSize());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			resultUpdate = "Data not Entered";
+		}
+		
+		return resultUpdate;
+	}
+	
+	public Boolean updateProduct(String query, String pname) {
+		DAO connDAO = new DAO();
+		connDAO.loadDriver(connDAO.dbDriver);
+		Connection laRopaCon = connDAO.getConnection();
+		query = "UPDATE product SET pname=?, " + "price=?, brand=?, category=?, stock=?, size=? WHERE product_id=?";
+		if(laRopaCon != null) {
+			try {
+				PreparedStatement statement = laRopaCon.prepareStatement(query);
+				statement.setString(1, pname);
+				int result = statement.executeUpdate();
+				if(result>=0)return true;
+				else return false;
+			} catch (SQLException e) { return null; }
+		}else { return null; }
+	}
